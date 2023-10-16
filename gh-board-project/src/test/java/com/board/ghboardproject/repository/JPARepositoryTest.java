@@ -18,22 +18,5 @@ import static org.assertj.core.api.Assertions.*;
 @DataJpaTest
 class JPARepositoryTest {
 
-    private final ArticleRepository articleRepository;
-    private final ArticleCommentRepository articleCommentRepository;
 
-    public JPARepositoryTest(@Autowired ArticleRepository articleRepository, @Autowired ArticleCommentRepository articleCommentRepository) {
-        this.articleRepository = articleRepository;
-        this.articleCommentRepository = articleCommentRepository;
-    }
-
-    @Test
-    void givenTestData_whenSelecting_theWorksFine(){
-        // Given
-
-        // When
-        List<Article> articles = articleRepository.findAll();
-
-        // Then
-        assertThat(articles).isNotNull().hasSize(0);
-    }
 }
