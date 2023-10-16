@@ -8,6 +8,7 @@ class GhBoardProjectApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }
