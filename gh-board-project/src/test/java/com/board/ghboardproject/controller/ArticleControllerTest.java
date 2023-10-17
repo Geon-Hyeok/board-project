@@ -45,7 +45,7 @@ class ArticleControllerTest {
         // WHen & Then
         mvc.perform(get("/articles/1"))
                 .andExpect(status().isOk())
-                .andExpect((content().contentType(MediaType.TEXT_HTML)))
+                .andExpect((content().contentTypeCompatibleWith(MediaType.TEXT_HTML)))
                 .andExpect(view().name("articles/detail"))
                 .andExpect(model().attributeExists("article"))
                 .andExpect(view().name("articleComments"));
@@ -61,7 +61,7 @@ class ArticleControllerTest {
         // WHen & Then
         mvc.perform(get("/articles/search"))
                 .andExpect(status().isOk())
-                .andExpect((content().contentType(MediaType.TEXT_HTML)))
+                .andExpect((content().contentTypeCompatibleWith(MediaType.TEXT_HTML)))
                 .andExpect(view().name("articles/search"));
 
     }
@@ -75,7 +75,7 @@ class ArticleControllerTest {
         // WHen & Then
         mvc.perform(get("/articles/search-hashtag"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect((content().contentType(MediaType.TEXT_HTML)))
+                .andExpect((content().contentTypeCompatibleWith(MediaType.TEXT_HTML)))
                 .andExpect(view().name("articles/search-hashtag"));
     }
 }
